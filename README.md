@@ -1,5 +1,7 @@
 # clang-tooling-sample
 This is a simple clang tool for getting started with building source code analysis or source to source transformation 
+#Step 0: 
+### Make sure you have LLVM and Clang installed correctly.
 
 # Step 1: 
 ## Modify Makefile

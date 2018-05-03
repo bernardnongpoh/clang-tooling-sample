@@ -39,13 +39,7 @@ public:
 
   bool VisitStmt(Stmt *stmt) {
 
-     if(CompoundStmt *compoundStmt = dyn_cast<CompoundStmt>(stmt)){
-            /*
-             * If it is a compound statement revisits all child nodes
-             */
-            RecursiveASTVisitor<WP_Traversal>::TraverseStmt(stmt);
-            return true;
-        }
+     
 
         stmt->dumpColor();
 
