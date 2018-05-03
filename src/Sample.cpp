@@ -35,15 +35,7 @@ public:
   MyASTVisitor(Rewriter &R) : TheRewriter(R) {}
 
 
-    std::string getSourceText(Stmt *stmt){
-        bool invalid;
-        CharSourceRange charSourceRange = CharSourceRange::getTokenRange(stmt->getLocStart(), stmt->getLocEnd());
-        StringRef str = Lexer::getSourceText(charSourceRange,*(sourceManager), compilerInstance.getLangOpts(), &invalid);
-        if (invalid) {
-            return "Invalid";
-        }
-        return str.str();
-    }
+   
 
   bool VisitStmt(Stmt *stmt) {
 
