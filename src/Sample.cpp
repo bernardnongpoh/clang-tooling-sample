@@ -35,7 +35,7 @@ public:
   MyASTVisitor(Rewriter &R) : TheRewriter(R) {}
 
 
-    string getSourceText(Stmt *stmt){
+    std::string getSourceText(Stmt *stmt){
         bool invalid;
         CharSourceRange charSourceRange = CharSourceRange::getTokenRange(stmt->getLocStart(), stmt->getLocEnd());
         StringRef str = Lexer::getSourceText(charSourceRange,*(sourceManager), compilerInstance.getLangOpts(), &invalid);
@@ -59,8 +59,8 @@ public:
 
     //s->dump();
     // Only care about If statements.
-    /*if (isa<IfStmt>(s)) {
-      IfStmt *IfStatement = cast<IfStmt>(s);
+    if (isa<IfStmt>(stmt)) {
+      IfStmt *IfStatement = cast<IfStmt>(stmt);
       Stmt *Then = IfStatement->getThen();
 
       TheRewriter.InsertText(Then->getLocStart(), "// the 'if' part\n", true,
@@ -70,7 +70,7 @@ public:
       if (Else)
         TheRewriter.InsertText(Else->getLocStart(), "// the 'else' part\n",
                                true, true);
-    }*/
+    }
 
     return true;
   }
