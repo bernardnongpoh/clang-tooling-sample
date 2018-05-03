@@ -1,0 +1,5 @@
+[
+    { "directory": "/media/bernard/Workspace/PhD/clang-tooling-sample/apps",
+    "command": "clang++ -o hello hello.cpp  -I/home/bernard/Workspace/LLVM/llvm-5.0.0.src/build/lib/clang/5.0.0/include",
+    "file": "/media/bernard/Workspace/PhD/clang-tooling-sample/apps/hello.cpp" },
+]
